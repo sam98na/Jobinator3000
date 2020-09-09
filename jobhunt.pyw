@@ -2,7 +2,7 @@ from tkinter import *
 from time import *
 from classes.extrawidgets import *
 
-
+backupLocation = "backupdata/backup.csv"
 df = JobDataFrameObject("data/data.csv")
 
 class InputNewJob:
@@ -130,11 +130,11 @@ class App:
         self.updateEntry.grid(row=2, column=1, padx=20, pady=20)
 
         #TESTING BUTTON: DELETE LAST ROW OF DATAFRAME#
-        self.deleteTest = Button(master, text="TEST: Delete last row of dataframe", command = df.deletelast)
-        self.deleteTest.grid(row = 3, column=1, padx=20, pady=20)
+        #self.deleteTest = Button(master, text="TEST: Delete last row of dataframe", command = df.deletelast)
+        #self.deleteTest.grid(row = 3, column=1, padx=20, pady=20)
 
         # Create backup csv #
-        self.backup = Button(master, text = "Backup Data File", command = df.createbackup("data/databackup.csv"))
+        self.backup = Button(master, text = "Backup Data File", command = df.createbackup(backupLocation))
         self.backup.grid(row = 3, column = 1, padx = 20, pady=20)
 
 
